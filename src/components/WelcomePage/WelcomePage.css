@@ -1,0 +1,77 @@
+/* Container für die gesamte Seite */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Stil für die Begrüßungsüberschrift */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  /* Stil für die Navigation (Über uns, Tiere Buttons) */
+  .navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    background-color: white;
+    border: 2px solid #e6e6e6;
+    border-radius: 20px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e6e6e6;
+    border-color: #ccc;
+  }
+  
+  /* Stil für die große Überschrift (Zoo Zürich Titel) */
+  h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Stil für den Absatz unter der Überschrift */
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+  
+  /* Zusätzlicher Abstand für die Fußzeilen-Icons (z.B. Ticket-Button oder Home-Symbol) */
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  
+  /* Stil für die Icons oder Ticket-Button */
+  .footer-icons img, .footer-icons button {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  .footer-icons button {
+    background-color: transparent;
+    border: none;
+  }
+  
