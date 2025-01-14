@@ -1,0 +1,96 @@
+/* Container für die Tier-Page */
+.tier-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Überschrift */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  background-color: white;
+  border: 2px solid #e6e6e6;
+  border-radius: 20px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background-color: #e6e6e6;
+  border-color: #ccc;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px; /* Maximale Breite für das Carousel */
+  margin: 0 auto; /* Zentriert das Carousel */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Buttons spezifisch positionieren */
+.carousel-button.previous {
+  left: -110px; /* Abstand vom linken Bildrand */
+}
+
+.carousel-button.next {
+  right: -110px; /* Abstand vom rechten Bildrand */
+}
+
+/* Einheitliche Größe und Seitenverhältnis der Bilder */
+.carousel-image {
+  width: 800px; /* Einheitliche Breite */
+  height: 400px; /* Einheitliche Höhe */
+  object-fit: cover; /* Füllt die Box und schneidet überstehende Teile */
+  border-radius: 10px;
+}
+
+/* Footer Icons */
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+}

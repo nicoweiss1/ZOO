@@ -1,5 +1,6 @@
 import React from "react";
 import "./WelcomePage.css";
+import { Link } from "react-router-dom";
 
 const WelcomePage = () => {
   return (
@@ -7,7 +8,9 @@ const WelcomePage = () => {
       <h1>Hallo Nico!</h1>
       <div className="navigation">
         <button>Über uns</button>
-        <button>Tiere</button>
+        <Link to="/tiere">
+          <button>Tiere</button>
+        </Link>
       </div>
       <h2>Willkommen im Zoo Zürich – dem Tor zur faszinierenden Welt der Tiere!</h2>
       <p>
