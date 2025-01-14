@@ -94,3 +94,12 @@ button:hover {
   padding: 0.5rem 2rem;
   font-weight: bold;
 }
+
+.footer-link {
+  cursor: pointer;
+}
+
+.footer-link.active {
+  text-decoration: underline; /* Unterstreicht den aktiven Link */
+  color: #000; /* Optional: Setze eine Farbe */
+}

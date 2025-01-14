@@ -1,8 +1,10 @@
 import React from "react";
 import "./WelcomePage.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Importiere useLocation
 
 const WelcomePage = () => {
+  const location = useLocation(); // Hole die aktuelle Route
+
   return (
     <div className="welcome-container">
       <h1>Hallo Nico!</h1>
@@ -31,8 +33,25 @@ const WelcomePage = () => {
         Erde und erleben Sie die Tiere so nah wie nie zuvor.
       </p>
       <div className="footer-icons">
-        <span>Home</span>
-        <span>Ticket</span>
+        {/* Aktiv für Home */}
+        <span
+          className={`footer-link ${
+            location.pathname === "/" || location.pathname === "/welcome"
+              ? "active"
+              : ""
+          }`}
+        >
+          Home
+        </span>
+        {/* Aktiv für Ticket */}
+        <Link
+          to="/ticket"
+          className={`footer-link ${
+            location.pathname === "/ticket" ? "active" : ""
+          }`}
+        >
+          <span>Ticket</span>
+        </Link>
       </div>
     </div>
   );

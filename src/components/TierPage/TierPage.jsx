@@ -51,8 +51,8 @@ const TierPage = () => {
         )}
       </div>
       <div className="footer-icons">
-        <span>Home</span>
-        <span>Ticket</span>
+        <span className="footer-link active">Home</span>
+        <span className="footer-link">Ticket</span> {/* Unterstreicht "Ticket" */}
       </div>
     </div>
   );

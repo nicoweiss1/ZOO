@@ -93,3 +93,14 @@ p {
 .footer-icons span:hover {
   color: #a52a2a; /* Rot-Ton für den Hover-Effekt */
 }
+
+.footer-link {
+  cursor: pointer;
+  text-decoration: none; /* Entferne die Standard-Unterstreichung */
+  color: black;
+}
+
+.footer-link.active {
+  text-decoration: underline; /* Nur das aktive Element wird unterstrichen */
+  color: black; /* Farbe bleibt gleich */
+}

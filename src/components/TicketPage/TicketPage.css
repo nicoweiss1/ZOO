@@ -1,0 +1,93 @@
+.ticket-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.ticket-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+}
+
+.ticket-form input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.ticket-form button {
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-form button:hover {
+  background-color: #45a049;
+}
+
+.ticket-container p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.ticket-container div {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer */
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f4f4f4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem 0;
+  margin: 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-icons span,
+.footer-icons a {
+  margin: 0 20rem; /* Symmetrischer Abstand */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none; /* Keine Unterstreichung */
+  color: black;
+  transition: color 0.3s;
+}
+
+.footer-icons span:hover,
+.footer-icons a:hover {
+  color: #a52a2a; /* Hover-Farbe */
+}
+
+.footer-link.active {
+  text-decoration: underline; /* Nur aktiver Link wird unterstrichen */
+  color: black;
+}
