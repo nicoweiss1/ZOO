@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { QRCodeCanvas } from "qrcode.react";
- // QR-Code-Bibliothek
+import { QRCodeCanvas } from "qrcode.react"; // QR-Code-Bibliothek
 import { Link, useLocation } from "react-router-dom"; // Für Footer-Verlinkungen
 import "./TicketPage.css";
 
@@ -25,19 +24,35 @@ const TicketPage = () => {
     }));
   };
 
-  const generateTicket = () => {
+  const generateTicket = async () => {
     const newTicket = {
       ...formData,
       ticketID: Math.random().toString(36).substr(2, 9), // Generiere eine zufällige ID
       date: new Date().toLocaleDateString(),
       time: new Date().toLocaleTimeString(),
     };
-    setTicket(newTicket); // Speichere die Daten
-  };
 
-  const showJsonData = () => {
-    if (ticket) {
-      alert(JSON.stringify(ticket, null, 2)); // Zeigt JSON-Daten in einem Pop-up an
+    // Generiere die URL für den QR-Code mit der ngrok-URL
+    const qrCodeUrl = `https://ec1d-178-197-223-44.ngrok-free.app/ticket/${newTicket.ticketID}`;
+    setTicket({ ...newTicket, qrCodeUrl }); // Speichere die URL im Ticket
+
+    // Sende die Daten ans Backend
+    try {
+      const response = await fetch("http://127.0.0.1:5001/save-ticket", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTicket),
+      });
+
+      if (response.ok) {
+        console.log("Ticket erfolgreich im Backend gespeichert");
+      } else {
+        console.error("Fehler beim Speichern des Tickets im Backend");
+      }
+    } catch (error) {
+      console.error("Fehler beim Senden der Daten ans Backend:", error);
     }
   };
 
@@ -103,8 +118,9 @@ const TicketPage = () => {
       ) : (
         <>
           <p>Ihr Ticket wurde erstellt! Scannen Sie den QR-Code:</p>
-          <div onClick={showJsonData} style={{ cursor: "pointer" }}>
-          <QRCodeCanvas value={JSON.stringify(ticket)} size={200} />
+          <div style={{ cursor: "pointer" }}>
+            {/* QR-Code mit Backend-URL */}
+            <QRCodeCanvas value={ticket.qrCodeUrl} size={200} />
           </div>
         </>
       )}
