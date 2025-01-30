@@ -33,7 +33,8 @@ const TicketPage = () => {
     };
 
     // Generiere die URL für den QR-Code mit der ngrok-URL
-    const qrCodeUrl = `https://ec1d-178-197-223-44.ngrok-free.app/ticket/${newTicket.ticketID}`;
+    const qrCodeUrl = ` https://46a8-77-109-144-90.ngrok-free.app/ticket/${newTicket.ticketID}`;
+
     setTicket({ ...newTicket, qrCodeUrl }); // Speichere die URL im Ticket
 
     // Sende die Daten ans Backend

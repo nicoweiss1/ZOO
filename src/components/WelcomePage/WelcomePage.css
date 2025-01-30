@@ -58,49 +58,64 @@ p {
 /* Stil für den Footer */
 .footer-icons {
   display: flex;
-  justify-content: space-between; /* Links und rechts positionieren */
+  justify-content: space-between; /* Elemente an den Rändern ausrichten */
   align-items: center;
-  width: 100%; /* Footer nimmt die gesamte Breite des Bildschirms ein */
+  width: 100%;
   background-color: #f4f4f4;
-  position: fixed; /* Footer bleibt immer unten */
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Dezenter Schatten oben */
-  padding: 1.2rem 0; /* Kein globaler horizontaler Abstand */
-  margin: 0; /* Kein äußerer Abstand */
-  border-top: 1px solid #e0e0e0; /* Dezente Linie oben */
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0; /* Innenabstand oben und unten */
 }
 
-/* Stil für "Home" */
-.footer-icons span:first-child {
-  margin-left: 20rem; /* Verschiebt "Home" weiter nach innen */
+/* Stil für Home */
+.footer-link:first-child {
+  margin-right: 2rem; /* Abstand zum linken Rand */
+}
+
+/* Stil für Ticket */
+.footer-link:last-child {
+  margin-right: 2rem; /* Abstand zum rechten Rand */
+}
+
+/* Stil für die Footer-Links */
+.footer-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
   font-size: 1rem;
   font-weight: bold; /* Texte fett */
-  cursor: pointer;
   transition: color 0.3s;
 }
 
-/* Stil für "Ticket" */
-.footer-icons span:last-child {
-  margin-right: 20rem; /* Hält "Ticket" weiter am rechten Rand */
-  font-size: 1rem;
-  font-weight: bold; /* Texte fett */
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.footer-icons span:hover {
+/* Hover-Effekt für Footer-Links */
+.footer-link:hover {
   color: #a52a2a; /* Rot-Ton für den Hover-Effekt */
 }
 
-.footer-link {
-  cursor: pointer;
-  text-decoration: none; /* Entferne die Standard-Unterstreichung */
-  color: black;
-}
-
+/* Aktiver Link wird unterstrichen */
 .footer-link.active {
   text-decoration: underline; /* Nur das aktive Element wird unterstrichen */
-  color: black; /* Farbe bleibt gleich */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-icons {
+    flex-direction: column; /* Stack die Elemente vertikal */
+    justify-content: center;
+    padding: 0.5rem;
+  }
+
+  .footer-link:first-child,
+  .footer-link:last-child {
+    margin: 0;
+    text-align: center; /* Zentriere die Links im responsiven Design */
+    padding: 0.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+  }
 }

@@ -72,17 +72,18 @@ button:hover {
 
 /* Buttons spezifisch positionieren */
 .carousel-button.previous {
-  left: -110px; /* Abstand vom linken Bildrand */
+  left: -50px; /* Abstand vom linken Bildrand */
 }
 
 .carousel-button.next {
-  right: -110px; /* Abstand vom rechten Bildrand */
+  right: -50px; /* Abstand vom rechten Bildrand */
 }
 
 /* Einheitliche Größe und Seitenverhältnis der Bilder */
 .carousel-image {
-  width: 800px; /* Einheitliche Breite */
-  height: 400px; /* Einheitliche Höhe */
+  width: 100%;
+  max-width: 800px; /* Maximale Breite */
+  height: auto; /* Automatische Höhe für das Seitenverhältnis */
   object-fit: cover; /* Füllt die Box und schneidet überstehende Teile */
   border-radius: 10px;
 }
@@ -90,16 +91,81 @@ button:hover {
 /* Footer Icons */
 .footer-icons {
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 2rem;
-  font-weight: bold;
+  justify-content: space-between; /* Elemente an die Ränder verteilen */
+  align-items: center;
+  width: 100%;
+  background-color: #f4f4f4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  border-top: 1px solid #e0e0e0;
 }
 
+/* Home-Link: Linksbündig */
+.footer-link:first-child {
+  margin-left: 2rem; /* Abstand zum linken Rand */
+}
+
+/* Ticket-Link: Rechtsbündig */
+.footer-link:last-child {
+  margin-right: 2rem; /* Abstand zum rechten Rand */
+}
+
+/* Stil für Footer-Links */
 .footer-link {
   cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
+/* Hover-Effekt für Footer-Links */
+.footer-link:hover {
+  color: #a52a2a; /* Rot-Ton für den Hover-Effekt */
+}
+
+/* Aktiver Link wird unterstrichen */
 .footer-link.active {
-  text-decoration: underline; /* Unterstreicht den aktiven Link */
-  color: #000; /* Optional: Setze eine Farbe */
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .tier-container {
+    padding: 1rem;
+  }
+
+  .carousel {
+    max-width: 100%;
+  }
+
+  .carousel-image {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .carousel-button.previous {
+    left: -30px; /* Weniger Abstand auf kleinen Bildschirmen */
+  }
+
+  .carousel-button.next {
+    right: -30px; /* Weniger Abstand auf kleinen Bildschirmen */
+  }
+
+  .footer-icons {
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .footer-link:first-child,
+  .footer-link:last-child {
+    margin: 0;
+    text-align: center;
+    padding: 0.5rem;
+  }
 }
